@@ -1,23 +1,19 @@
-//Add dependencies
-const orm = require("../config/orm");
+module.exports = function (sequelize, DataTypes) {
+    const Burger = sequelize.define('Burger',
+        {
+            burger_name: DataTypes.STRING,
+            devoured: DataTypes.BOOLEAN,
+            updatedAt: {
+                type: DataTypes.DATE,
+                defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+            },
+            createdAt: {
+                type: DataTypes.DATE,
+                defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+            }
+        }, {
+            timestamps: false
+        });
 
-var burger = {
-    all: (cb) => {
-        orm.selectAll("burgers", (result) => {
-            cb(result);
-        });
-    },
-    create: (columns, values, cb) => {
-        orm.insertOne("burgers", columns, values, (result) => {
-            cb(result);
-        });
-    },
-    update: (whatToUpdate, rowIDValue, cb) => {
-        orm.updateOne("burgers", whatToUpdate, rowIDValue, (result) => {
-            cb(result);
-        });
-    }
+    return Burger;
 };
-
-// Export the database functions
-module.exports = burger;
