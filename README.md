@@ -7,7 +7,7 @@ This is a mobile friendly burger logger built with MySQL, Node, Express, Handleb
 * Each burger in the `Burgers to eat` area also has a `Devour` button. When the user clicks it, the burger will move to the `Burgers devoured` area.
 * The app will store every burger in a `mySQL` database.
 
-The deployed application can be found [here](https://noel-eat-burger.herokuapp.com/).
+The deployed application can be found [here](https://noel-eat-burger-sequel.herokuapp.com//).
 
 ## To add a new burger
 
