@@ -15,5 +15,14 @@ module.exports = function (sequelize, DataTypes) {
             timestamps: false
         });
 
+    Burger.associate = function (models) {
+        // A buger can belong to a customer but doesn't have to be associated with a customer. 
+        Burger.belongsTo(models.Customer, {
+            foreignKey: {
+                allowNull: true
+            }
+        });
+    };
+
     return Burger;
 };
