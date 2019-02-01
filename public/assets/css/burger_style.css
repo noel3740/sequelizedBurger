@@ -25,6 +25,16 @@ footer {
     background-color: #f5f5f5;
 }
 
+.customerName {
+    width: calc(100% - 60px);
+}
+
+.devourButton {
+    position: absolute;
+    top: 52px;
+    right: 0;
+}
+
 .burger-gold-card, .burger-gold-card .list-group-item {
     background-color: #f6a624;
 }
