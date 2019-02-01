@@ -2,7 +2,6 @@
 require('dotenv').config();
 const express = require("express");
 const exphbs = require("express-handlebars");
-const routes = require("./controllers/burgers_controller");
 const db = require('./models');
 
 //Set port server will be listing on
@@ -22,8 +21,10 @@ app.use(express.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-//Setup express to use the routes setup in the controller
-app.use(routes);
+//require express routes
+require("./controllers/burgers_controller")(app);
+require("./controllers/customers_controller")(app);
+require("./controllers/html_controller")(app);
 
 // Start our server so that it can begin listening to client requests.
 db.sequelize.sync().then(() => {
