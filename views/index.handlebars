@@ -18,8 +18,21 @@
                     <ul class="list-group list-group-flush">
                         {{#each burgers}}
                         {{#unless devoured}}
-                        <li class="list-group-item">{{id}}. {{burger_name}} <button class="btn btn-success btn-sm float-right devourButton"
-                                data-burger-id="{{id}}">Devour</button></li>
+                        <li class="list-group-item mb-3">
+                            <div class="mb-3">{{id}}. {{burger_name}}</div>
+                            <form class="needs-validation devourForm" novalidate>
+                                <div class="form-group">
+                                    <button class="btn btn-success devourButton"
+                                        data-burger-id="{{id}}">Devour</button>
+                                    <input type="text" name="customerName" class="form-control customerName"
+                                        data-burger-id="{{id}}" placeholder="Customer Name" required>
+                                    <div class="invalid-feedback">
+                                        Please enter a customer name.
+                                    </div>
+                                </div>
+
+                            </form>
+                        </li>
                         {{/unless}}
                         {{/each}}
                     </ul>
@@ -35,7 +48,14 @@
                     <ul class="list-group list-group-flush">
                         {{#each burgers}}
                         {{#if devoured}}
-                        <li class="list-group-item">{{id}}. {{burger_name}}</li>
+                        <li class="list-group-item">
+                            <div>
+                                {{id}}. {{burger_name}}
+                            </div>
+                            <div class="text-muted">
+                                devoured by: {{Customer.customer_name}}
+                            </div>
+                        </li>
                         {{/if}}
                         {{/each}}
                     </ul>
