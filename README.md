@@ -1,6 +1,6 @@
 # Eat Da Burger
 
-This is a mobile friendly burger logger built with MySQL, Node, Express, Handlebars, Bootstrap, JQuery and a homemade ORM (yum!). This application follows the MVC design pattern. Node and MySQL are used to query and route data into app, and Handlebars is used to generate the HTML.
+This is a mobile friendly burger logger built with MySQL, Node, Express, Handlebars, Bootstrap, JQuery and Sequelize. This application follows the MVC design pattern. Node, MySQL, and Sequelize are used to query and route data into app, and Handlebars is used to generate the HTML.
 
 * `Eat Da Burger` is a restaurant app that lets users input the names of burgers they'd like to eat.
 * Whenever a user submits a burger's name, the app will display the burger on the `Burgers to eat` area waiting to be devoured.
